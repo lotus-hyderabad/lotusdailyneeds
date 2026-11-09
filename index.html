@@ -4,6 +4,222 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lotus Daily Needs - Premium Pooja Essentials</title>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lotus Daily Needs</title>
+    <style>
+        :root {
+            --primary-pink: #d81b60;
+            --light-pink: #fce4ec;
+            --gold: #d4af37;
+            --dark-text: #333333;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fafafa;
+            color: var(--dark-text);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header with Gold-Bordered Logo */
+        header {
+            background-color: #ffffff;
+            border-bottom: 3px solid var(--gold);
+            padding: 15px 20px;
+            text-align: center;
+        }
+
+        .logo-container {
+            border: 2px solid var(--gold);
+            display: inline-block;
+            padding: 8px 20px;
+            background-color: #fffdf0;
+        }
+
+        .logo-container h1 {
+            color: var(--primary-pink);
+            margin: 0;
+            font-size: 24px;
+        }
+
+        /* Golden Sub-header Bars */
+        .subheader-bar {
+            border: 2px solid var(--gold);
+            background-color: var(--light-pink);
+            padding: 8px 15px;
+            margin: 15px auto;
+            max-width: 600px;
+            text-align: center;
+            font-weight: bold;
+            color: var(--primary-pink);
+            border-radius: 4px;
+        }
+
+        /* Vertical Item List Container */
+        .catalog-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+        /* Individual Product Row */
+        .product-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .product-info {
+            flex-grow: 1;
+        }
+
+        .product-name {
+            font-size: 16px;
+            font-weight: bold;
+            color: var(--dark-text);
+            margin: 0 0 4px 0;
+        }
+
+        .product-price {
+            font-size: 14px;
+            color: var(--primary-pink);
+            margin: 0;
+        }
+
+        /* Quantity Selection Buttons on the Right */
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .qty-btn {
+            background-color: var(--primary-pink);
+            color: white;
+            border: none;
+            width: 30px;
+            height: 30px;
+            font-weight: bold;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .qty-btn:active {
+            background-color: #ad1457;
+        }
+
+        .qty-display {
+            font-size: 15px;
+            font-weight: bold;
+            min-width: 20px;
+            text-align: center;
+        }
+
+        /* Floating Action Buttons / Help */
+        .action-footer {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 0 10px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .action-btn {
+            flex: 1;
+            padding: 12px;
+            background-color: #25D366; /* WhatsApp Green */
+            color: white;
+            border: none;
+            font-weight: bold;
+            border-radius: 4px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <h1>Lotus Daily Needs</h1>
+        </div>
+    </header>
+
+    <div class="subheader-bar">
+        Hyderabad Home Appliances & Daily Utilities
+    </div>
+
+    <div class="catalog-container">
+        <!-- Product 1 -->
+        <div class="product-row">
+            <div class="product-info">
+                <p class="product-name">Mixer Grinder 750W</p>
+                <p class="product-price">₹2,499</p>
+            </div>
+            <div class="quantity-control">
+                <button class="qty-btn" onclick="updateQty('mix-qty', -1)">-</button>
+                <span id="mix-qty" class="qty-display">0</span>
+                <button class="qty-btn" onclick="updateQty('mix-qty', 1)">+</button>
+            </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-row">
+            <div class="product-info">
+                <p class="product-name">Induction Stove</p>
+                <p class="product-price">₹1,899</p>
+            </div>
+            <div class="quantity-control">
+                <button class="qty-btn" onclick="updateQty('ind-qty', -1)">-</button>
+                <span id="ind-qty" class="qty-display">0</span>
+                <button class="qty-btn" onclick="updateQty('ind-qty', 1)">+</button>
+            </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-row">
+            <div class="product-info">
+                <p class="product-name">Zebronics 5.1 Music System</p>
+                <p class="product-price">₹4,500</p>
+            </div>
+            <div class="quantity-control">
+                <button class="qty-btn" onclick="updateQty('zeb-qty', -1)">-</button>
+                <span id="zeb-qty" class="qty-display">0</span>
+                <button class="qty-btn" onclick="updateQty('zeb-qty', 1)">+</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Order Routing -->
+    <div class="action-footer">
+        <a href="https://wa.me/918500822515?text=Hello%20Lotus%20Daily%20Needs,%20I%20want%20to%20order:" class="action-btn" target="_blank">Order on WhatsApp (8500822515)</a>
+    </div>
+
+    <script>
+        function updateQty(id, change) {
+            const qtyElement = document.getElementById(id);
+            let currentQty = parseInt(qtyElement.innerText);
+            currentQty += change;
+            if (currentQty < 0) currentQty = 0;
+            qtyElement.innerText = currentQty;
+        }
+    </script>
+
+</body>
+</html>
     
     <!-- PWA Web Manifest Link Placeholder -->
     <link rel="manifest" href="manifest.json">
